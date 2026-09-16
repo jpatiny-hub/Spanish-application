@@ -2,7 +2,7 @@ name: Déployer sur GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/upbeat-gates-qqxy8j]
   workflow_dispatch:
 
 permissions:
