@@ -99,6 +99,39 @@ export const vocabulary: VocabItem[] = [
   { id: 'v77', es: 'la reunión', fr: 'la réunion', category: 'Au travail' },
   { id: 'v78', es: 'el informe', fr: 'le rapport', category: 'Au travail' },
   { id: 'v79', es: 'el microscopio', fr: 'le microscope', category: 'Au travail' },
+
+  // Achats
+  { id: 'v80', es: 'la tienda', fr: 'le magasin', category: 'Achats' },
+  { id: 'v81', es: 'el supermercado', fr: 'le supermarché', category: 'Achats' },
+  { id: 'v82', es: 'el precio', fr: 'le prix', category: 'Achats' },
+  { id: 'v83', es: 'el dinero', fr: "l'argent", category: 'Achats' },
+  { id: 'v84', es: 'comprar', fr: 'acheter', category: 'Achats' },
+  { id: 'v85', es: 'la caja', fr: 'la caisse', category: 'Achats' },
+  { id: 'v86', es: 'barato', fr: 'bon marché', category: 'Achats' },
+  { id: 'v87', es: 'caro', fr: 'cher', category: 'Achats' },
+  { id: 'v88', es: '¿Cuánto cuesta?', fr: 'Combien ça coûte ?', category: 'Achats' },
+
+  // Santé
+  { id: 'v89', es: 'el cuerpo', fr: 'le corps', category: 'Santé' },
+  { id: 'v90', es: 'la cabeza', fr: 'la tête', category: 'Santé' },
+  { id: 'v91', es: 'el brazo', fr: 'le bras', category: 'Santé' },
+  { id: 'v92', es: 'la pierna', fr: 'la jambe', category: 'Santé' },
+  { id: 'v93', es: 'el médico', fr: 'le médecin', category: 'Santé' },
+  { id: 'v94', es: 'la farmacia', fr: 'la pharmacie', category: 'Santé' },
+  { id: 'v95', es: 'la pastilla', fr: 'le comprimé', category: 'Santé' },
+  { id: 'v96', es: 'me duele', fr: 'ça me fait mal', category: 'Santé' },
+  { id: 'v97', es: 'estar enfermo', fr: 'être malade', category: 'Santé' },
+
+  // Loisirs
+  { id: 'v98', es: 'el fútbol', fr: 'le football', category: 'Loisirs' },
+  { id: 'v99', es: 'la música', fr: 'la musique', category: 'Loisirs' },
+  { id: 'v100', es: 'leer', fr: 'lire', category: 'Loisirs' },
+  { id: 'v101', es: 'bailar', fr: 'danser', category: 'Loisirs' },
+  { id: 'v102', es: 'nadar', fr: 'nager', category: 'Loisirs' },
+  { id: 'v103', es: 'el cine', fr: 'le cinéma', category: 'Loisirs' },
+  { id: 'v104', es: 'pintar', fr: 'peindre', category: 'Loisirs' },
+  { id: 'v105', es: 'el deporte', fr: 'le sport', category: 'Loisirs' },
+  { id: 'v106', es: 'jugar', fr: 'jouer', category: 'Loisirs' },
 ]
 
 export const vocabCategories = Array.from(new Set(vocabulary.map((v) => v.category)))

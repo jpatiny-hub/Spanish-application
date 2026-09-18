@@ -319,4 +319,122 @@ export const readingTexts: ReadingText[] = [
       },
     ],
   },
+  {
+    id: 'r9-compras',
+    title: 'De compras en el mercado',
+    level: 1,
+    paragraphs: [
+      {
+        es: 'Los sábados voy al mercado para comprar fruta y verdura fresca. Los precios son más baratos que en el supermercado.',
+        fr: 'Le samedi, je vais au marché pour acheter des fruits et légumes frais. Les prix sont moins chers qu\'au supermarché.',
+      },
+      {
+        es: '—¿Cuánto cuestan las manzanas? —Cuestan dos euros el kilo. —Muy bien, quiero un kilo, por favor.',
+        fr: '— Combien coûtent les pommes ? — Elles coûtent deux euros le kilo. — Très bien, j\'en veux un kilo, s\'il vous plaît.',
+      },
+      {
+        es: 'Al final, pago en la caja con tarjeta porque no llevo dinero en efectivo.',
+        fr: 'À la fin, je paie à la caisse par carte parce que je n\'ai pas d\'argent liquide sur moi.',
+      },
+    ],
+    questions: [
+      {
+        question: '¿Por qué va al mercado y no al supermercado?',
+        options: [
+          'Porque está más cerca',
+          'Porque los precios son más baratos',
+          'Porque abre antes',
+          'Porque tiene más variedad',
+        ],
+        answerIndex: 1,
+      },
+      {
+        question: '¿Cuánto cuestan las manzanas?',
+        options: ['Un euro el kilo', 'Dos euros el kilo', 'Tres euros el kilo', 'Cinco euros el kilo'],
+        answerIndex: 1,
+      },
+      {
+        question: '¿Cómo paga al final?',
+        options: ['En efectivo', 'Con tarjeta', 'No paga', 'Con cheque'],
+        answerIndex: 1,
+      },
+    ],
+  },
+  {
+    id: 'r10-salud',
+    title: 'En la farmacia',
+    level: 2,
+    paragraphs: [
+      {
+        es: 'Esta mañana me duele mucho la cabeza y estoy muy cansada. Decido ir a la farmacia cerca de mi casa.',
+        fr: 'Ce matin j\'ai très mal à la tête et je suis très fatiguée. Je décide d\'aller à la pharmacie près de chez moi.',
+      },
+      {
+        es: '—Buenos días, ¿tiene algo para el dolor de cabeza? —Sí, tengo estas pastillas. Tome una cada ocho horas.',
+        fr: '— Bonjour, avez-vous quelque chose pour le mal de tête ? — Oui, j\'ai ces comprimés. Prenez-en un toutes les huit heures.',
+      },
+      {
+        es: 'Si mañana todavía estoy enferma, voy a pedir una cita con el médico. La salud es lo más importante.',
+        fr: 'Si demain je suis encore malade, je vais prendre rendez-vous avec le médecin. La santé est ce qu\'il y a de plus important.',
+      },
+    ],
+    questions: [
+      {
+        question: '¿Qué le duele a la persona?',
+        options: ['El brazo', 'La cabeza', 'La pierna', 'El estómago'],
+        answerIndex: 1,
+      },
+      {
+        question: '¿Cada cuánto tiempo debe tomar las pastillas?',
+        options: ['Cada cuatro horas', 'Cada seis horas', 'Cada ocho horas', 'Una vez al día'],
+        answerIndex: 2,
+      },
+      {
+        question: '¿Qué va a hacer si sigue enferma mañana?',
+        options: [
+          'Ir al hospital',
+          'Pedir una cita con el médico',
+          'Tomar más pastillas',
+          'No hacer nada',
+        ],
+        answerIndex: 1,
+      },
+    ],
+  },
+  {
+    id: 'r11-ocio',
+    title: 'Mis pasatiempos favoritos',
+    level: 1,
+    paragraphs: [
+      {
+        es: 'Me gusta mucho la música y también me gusta bailar los fines de semana con mis amigos.',
+        fr: "J'aime beaucoup la musique et j'aime aussi danser le week-end avec mes amis.",
+      },
+      {
+        es: 'A mi hermano le gusta el deporte. Juega al fútbol todos los martes y le gusta nadar en verano.',
+        fr: "Mon frère aime le sport. Il joue au football tous les mardis et il aime nager en été.",
+      },
+      {
+        es: 'A mí no me gusta mucho el cine, prefiero leer un buen libro en casa.',
+        fr: "Moi je n'aime pas trop le cinéma, je préfère lire un bon livre à la maison.",
+      },
+    ],
+    questions: [
+      {
+        question: '¿Qué le gusta hacer los fines de semana?',
+        options: ['Trabajar', 'Bailar con amigos', 'Nadar', 'Pintar'],
+        answerIndex: 1,
+      },
+      {
+        question: '¿Qué deporte practica el hermano?',
+        options: ['Baloncesto', 'Tenis', 'Fútbol', 'Natación'],
+        answerIndex: 2,
+      },
+      {
+        question: '¿Qué prefiere hacer en vez de ir al cine?',
+        options: ['Leer un libro', 'Ver la televisión', 'Escuchar música', 'Dormir'],
+        answerIndex: 0,
+      },
+    ],
+  },
 ]

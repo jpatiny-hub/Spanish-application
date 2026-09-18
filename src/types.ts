@@ -9,6 +9,9 @@ export type VocabCategory =
   | 'Météo'
   | 'Voyage'
   | 'Au travail'
+  | 'Achats'
+  | 'Santé'
+  | 'Loisirs'
 
 export interface VocabItem {
   id: string
@@ -54,6 +57,9 @@ export type SpeakingCategory =
   | 'Météo'
   | 'Voyage'
   | 'Au restaurant'
+  | 'Achats'
+  | 'Santé'
+  | 'Loisirs'
 
 export type SpeakingLevel = 'mot' | 'fragment' | 'phrase'
 
@@ -72,6 +78,9 @@ export type WritingCategory =
   | 'Météo'
   | 'Voyage'
   | 'Grammaire'
+  | 'Achats'
+  | 'Santé'
+  | 'Loisirs'
 
 export interface WritingExercise {
   id: string

@@ -181,4 +181,36 @@ export const grammarLessons: GrammarLesson[] = [
       },
     ],
   },
+  {
+    id: 'g9-gustar',
+    order: 9,
+    title: 'Exprimer ses goûts : le verbe "gustar"',
+    summary: '"Gustar" ne se construit pas comme "aimer" en français : c\'est la chose aimée qui est le sujet.',
+    points: [
+      {
+        title: 'La construction inversée',
+        explanation: 'Littéralement "gustar" veut dire "plaire à". On utilise un pronom d\'objet indirect (me, te, le, nos, os, les) devant le verbe.',
+        examples: [
+          { es: 'Me gusta la música.', fr: "J'aime la musique. (littéralement : la musique me plaît)" },
+          { es: 'Le gusta el fútbol.', fr: 'Il/elle aime le football.' },
+        ],
+      },
+      {
+        title: 'Singulier ou pluriel',
+        explanation: '"Gusta" si ce qui est aimé est au singulier ou un verbe à l\'infinitif, "gustan" si c\'est au pluriel.',
+        examples: [
+          { es: 'Me gusta bailar.', fr: "J'aime danser." },
+          { es: 'Me gustan los deportes.', fr: "J'aime les sports." },
+        ],
+      },
+      {
+        title: 'Préciser ou insister sur la personne',
+        explanation: 'On peut ajouter "a mí", "a ti", "a él/ella", "a nosotros"... pour clarifier ou insister.',
+        examples: [
+          { es: 'A mi hermano le gusta nadar.', fr: 'Mon frère aime nager.' },
+          { es: 'A mí no me gusta el cine, pero a ti sí.', fr: "Moi je n'aime pas le cinéma, mais toi oui." },
+        ],
+      },
+    ],
+  },
 ]

@@ -43,6 +43,24 @@ export const writingExercises: WritingExercise[] = [
   { id: 'w29', category: 'Grammaire', type: 'a-trous', prompt: 'Ella ___ (ser) profesora.', answer: 'es', hint: 'ser (métier), présent, 3ème pers.' },
   { id: 'w30', category: 'Grammaire', type: 'traduction', prompt: 'Nous ne travaillons pas le dimanche.', answer: 'No trabajamos el domingo.' },
   { id: 'w31', category: 'Grammaire', type: 'a-trous', prompt: '¿___ (Hablar) tú español?', answer: 'Hablas', hint: 'hablar, présent, 2ème pers. (question)' },
+
+  // Achats
+  { id: 'w32', category: 'Achats', type: 'traduction', prompt: 'Combien ça coûte ?', answer: '¿Cuánto cuesta?' },
+  { id: 'w33', category: 'Achats', type: 'traduction', prompt: "Je vais payer par carte.", answer: 'Voy a pagar con tarjeta.' },
+  { id: 'w34', category: 'Achats', type: 'a-trous', prompt: 'Yo ___ (querer) comprar un kilo de manzanas.', answer: 'quiero', hint: 'querer, présent, 1ère pers.' },
+  { id: 'w35', category: 'Achats', type: 'traduction', prompt: 'Ce magasin est très cher.', answer: 'Esta tienda es muy cara.' },
+
+  // Santé
+  { id: 'w36', category: 'Santé', type: 'traduction', prompt: "J'ai mal à la tête.", answer: 'Me duele la cabeza.' },
+  { id: 'w37', category: 'Santé', type: 'traduction', prompt: 'Je dois prendre rendez-vous avec le médecin.', answer: 'Tengo que pedir una cita con el médico.' },
+  { id: 'w38', category: 'Santé', type: 'a-trous', prompt: 'Ella ___ (estar) enferma hoy.', answer: 'está', hint: 'estar (état), présent, 3ème pers.' },
+  { id: 'w39', category: 'Santé', type: 'traduction', prompt: 'Prends un comprimé toutes les huit heures.', answer: 'Toma una pastilla cada ocho horas.' },
+
+  // Loisirs (gustar)
+  { id: 'w40', category: 'Loisirs', type: 'traduction', prompt: "J'aime la musique.", answer: 'Me gusta la música.' },
+  { id: 'w41', category: 'Loisirs', type: 'traduction', prompt: 'Mon frère aime le sport.', answer: 'A mi hermano le gusta el deporte.' },
+  { id: 'w42', category: 'Loisirs', type: 'a-trous', prompt: 'A nosotros nos ___ (gustar) bailar.', answer: 'gusta', hint: 'gustar, présent, avec "nos"' },
+  { id: 'w43', category: 'Loisirs', type: 'traduction', prompt: "Je préfère lire un livre.", answer: 'Prefiero leer un libro.' },
 ]
 
 export const writingCategories = Array.from(new Set(writingExercises.map((w) => w.category)))

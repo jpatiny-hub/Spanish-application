@@ -50,6 +50,27 @@ export const speakingItems: SpeakingItem[] = [
   { id: 's34', es: 'Esta mañana analicé varias muestras en el laboratorio.', fr: "Ce matin j'ai analysé plusieurs échantillons au laboratoire.", category: 'Au travail', level: 'phrase' },
   { id: 's35', es: 'Tengo que escribir un informe sobre los resultados.', fr: "Je dois écrire un rapport sur les résultats.", category: 'Au travail', level: 'phrase' },
   { id: 's36', es: 'Mañana tenemos una reunión importante con el equipo de investigación.', fr: "Demain nous avons une réunion importante avec l'équipe de recherche.", category: 'Au travail', level: 'phrase' },
+
+  // Achats
+  { id: 's37', es: 'la tienda', fr: 'le magasin', category: 'Achats', level: 'mot' },
+  { id: 's38', es: '¿Cuánto cuesta?', fr: 'Combien ça coûte ?', category: 'Achats', level: 'fragment' },
+  { id: 's39', es: '¿Tiene esto en otra talla?', fr: 'Avez-vous ceci dans une autre taille ?', category: 'Achats', level: 'phrase' },
+  { id: 's40', es: 'Quiero un kilo de manzanas, por favor.', fr: "Je veux un kilo de pommes, s'il vous plaît.", category: 'Achats', level: 'phrase' },
+  { id: 's41', es: 'Voy a pagar con tarjeta, no tengo efectivo.', fr: "Je vais payer par carte, je n'ai pas de liquide.", category: 'Achats', level: 'phrase' },
+
+  // Santé
+  { id: 's42', es: 'me duele la cabeza', fr: "j'ai mal à la tête", category: 'Santé', level: 'fragment' },
+  { id: 's43', es: 'la farmacia', fr: 'la pharmacie', category: 'Santé', level: 'mot' },
+  { id: 's44', es: '¿Tiene algo para el dolor de cabeza?', fr: 'Avez-vous quelque chose pour le mal de tête ?', category: 'Santé', level: 'phrase' },
+  { id: 's45', es: 'Necesito pedir una cita con el médico.', fr: 'Je dois prendre rendez-vous avec le médecin.', category: 'Santé', level: 'phrase' },
+  { id: 's46', es: 'Tome una pastilla cada ocho horas.', fr: 'Prenez un comprimé toutes les huit heures.', category: 'Santé', level: 'phrase' },
+
+  // Loisirs
+  { id: 's47', es: 'me gusta la música', fr: "j'aime la musique", category: 'Loisirs', level: 'fragment' },
+  { id: 's48', es: 'jugar al fútbol', fr: 'jouer au football', category: 'Loisirs', level: 'fragment' },
+  { id: 's49', es: 'Los fines de semana me gusta nadar.', fr: "Le week-end, j'aime nager.", category: 'Loisirs', level: 'phrase' },
+  { id: 's50', es: 'A mi hermano le gusta mucho el deporte.', fr: 'Mon frère aime beaucoup le sport.', category: 'Loisirs', level: 'phrase' },
+  { id: 's51', es: 'Prefiero leer un libro en vez de ver la televisión.', fr: 'Je préfère lire un livre plutôt que regarder la télévision.', category: 'Loisirs', level: 'phrase' },
 ]
 
 export const speakingCategories = Array.from(new Set(speakingItems.map((s) => s.category)))
