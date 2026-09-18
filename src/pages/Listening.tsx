@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { vocabulary } from '../data/vocabulary'
 import { canSpeak, speak } from '../lib/speech'
 import type { VocabItem } from '../types'
@@ -10,8 +11,10 @@ interface Question {
 
 const QUIZ_SIZE = 8
 
-function buildQuiz(): Question[] {
-  const shuffled = [...vocabulary].sort(() => Math.random() - 0.5).slice(0, QUIZ_SIZE)
+function buildQuiz(category?: string | null): Question[] {
+  const pool = category ? vocabulary.filter((v) => v.category === category) : vocabulary
+  const source = pool.length >= 4 ? pool : vocabulary
+  const shuffled = [...source].sort(() => Math.random() - 0.5).slice(0, Math.min(QUIZ_SIZE, source.length))
   return shuffled.map((item) => {
     const distractors = vocabulary
       .filter((v) => v.id !== item.id)
@@ -24,19 +27,29 @@ function buildQuiz(): Question[] {
 }
 
 export function Listening() {
+  const [searchParams] = useSearchParams()
   const [quiz, setQuiz] = useState<Question[] | null>(null)
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [score, setScore] = useState(0)
+  const [lastLength, setLastLength] = useState(QUIZ_SIZE)
 
   const question = quiz?.[index]
 
-  function start() {
-    setQuiz(buildQuiz())
+  function start(category?: string | null) {
+    const built = buildQuiz(category)
+    setQuiz(built)
+    setLastLength(built.length)
     setIndex(0)
     setScore(0)
     setSelected(null)
   }
+
+  useEffect(() => {
+    const cat = searchParams.get('cat')
+    if (cat) start(cat)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function choose(option: string) {
     if (selected) return
@@ -73,10 +86,10 @@ export function Listening() {
           Écoute le mot en espagnol et choisis la bonne traduction.
         </p>
         {score > 0 && (
-          <p className="mt-3 text-sm font-semibold">Dernier score : {score} / {QUIZ_SIZE}</p>
+          <p className="mt-3 text-sm font-semibold">Dernier score : {score} / {lastLength}</p>
         )}
         <button
-          onClick={start}
+          onClick={() => start()}
           className="mt-4 w-full rounded-2xl bg-red-600 py-3 font-semibold text-white shadow-sm"
         >
           Commencer

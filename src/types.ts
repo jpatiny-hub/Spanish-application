@@ -6,6 +6,9 @@ export type VocabCategory =
   | 'Nourriture'
   | 'Jours & mois'
   | 'Au quotidien'
+  | 'Météo'
+  | 'Voyage'
+  | 'Au travail'
 
 export interface VocabItem {
   id: string
@@ -41,4 +44,54 @@ export interface ReadingText {
   level: 1 | 2 | 3
   paragraphs: { es: string; fr: string }[]
   questions: ReadingQuestion[]
+}
+
+export type SpeakingCategory =
+  | 'Salutations'
+  | 'Famille'
+  | 'Au quotidien'
+  | 'Au travail'
+  | 'Météo'
+  | 'Voyage'
+  | 'Au restaurant'
+
+export type SpeakingLevel = 'mot' | 'fragment' | 'phrase'
+
+export interface SpeakingItem {
+  id: string
+  es: string
+  fr: string
+  category: SpeakingCategory
+  level: SpeakingLevel
+}
+
+export type WritingCategory =
+  | 'Au quotidien'
+  | 'Famille'
+  | 'Au travail'
+  | 'Météo'
+  | 'Voyage'
+  | 'Grammaire'
+
+export interface WritingExercise {
+  id: string
+  category: WritingCategory
+  type: 'traduction' | 'a-trous'
+  prompt: string
+  answer: string
+  hint?: string
+}
+
+export type UnitStep = 'grammaire' | 'vocabulaire' | 'lecture' | 'ecoute' | 'oral' | 'ecrit'
+
+export interface Unit {
+  id: string
+  title: string
+  description: string
+  icon: string
+  grammarLessonId: string
+  vocabCategory: VocabCategory
+  readingTextId: string
+  speakingCategory: SpeakingCategory
+  writingCategory: WritingCategory
 }

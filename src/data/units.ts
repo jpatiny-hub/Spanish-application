@@ -1,0 +1,48 @@
+import type { Unit } from '../types'
+
+export const units: Unit[] = [
+  {
+    id: 'u-familia',
+    title: 'La famille',
+    description: 'Parler de tes proches : vocabulaire, genre des mots, lecture et pratique orale.',
+    icon: '👪',
+    grammarLessonId: 'g2-genre',
+    vocabCategory: 'Famille',
+    readingTextId: 'r4-familia',
+    speakingCategory: 'Famille',
+    writingCategory: 'Famille',
+  },
+  {
+    id: 'u-meteo',
+    title: 'La météo',
+    description: 'Décrire le temps qu\'il fait et les prévisions avec le futur proche.',
+    icon: '⛅',
+    grammarLessonId: 'g7-futuro-proximo',
+    vocabCategory: 'Météo',
+    readingTextId: 'r5-tiempo',
+    speakingCategory: 'Météo',
+    writingCategory: 'Météo',
+  },
+  {
+    id: 'u-viaje',
+    title: 'Voyager',
+    description: 'Réserver, se déplacer et raconter un voyage passé (prétérit).',
+    icon: '✈️',
+    grammarLessonId: 'g8-preterito',
+    vocabCategory: 'Voyage',
+    readingTextId: 'r6-viaje',
+    speakingCategory: 'Voyage',
+    writingCategory: 'Voyage',
+  },
+  {
+    id: 'u-trabajo',
+    title: 'Au travail : biologiste en industrie pharmaceutique',
+    description: 'Le vocabulaire de ton métier : laboratoire, échantillons, essais cliniques, réunions.',
+    icon: '🔬',
+    grammarLessonId: 'g6-negation',
+    vocabCategory: 'Au travail',
+    readingTextId: 'r7-laboratorio',
+    speakingCategory: 'Au travail',
+    writingCategory: 'Au travail',
+  },
+]

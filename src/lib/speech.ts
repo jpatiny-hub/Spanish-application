@@ -1,4 +1,5 @@
 // Petits utilitaires autour des Web Speech APIs du navigateur (gratuites, embarquées dans Android/Chrome).
+export { normalizeForComparison } from './text'
 
 export function speak(text: string, lang = 'es-ES', rate = 0.9) {
   if (!('speechSynthesis' in window)) return
@@ -61,14 +62,4 @@ export function listenOnce(
 
   recognition.start()
   return () => recognition.stop()
-}
-
-// Compare deux chaînes en ignorant accents, ponctuation et casse pour une tolérance raisonnable.
-export function normalizeForComparison(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[¿?¡!.,]/g, '')
-    .trim()
 }

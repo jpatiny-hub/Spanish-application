@@ -8,6 +8,10 @@ import { Reading } from './pages/Reading'
 import { ReadingTextPage } from './pages/ReadingText'
 import { Listening } from './pages/Listening'
 import { Speaking } from './pages/Speaking'
+import { Writing } from './pages/Writing'
+import { Practice } from './pages/Practice'
+import { Units } from './pages/Units'
+import { UnitDetail } from './pages/UnitDetail'
 
 function App() {
   return (
@@ -15,13 +19,17 @@ function App() {
       <main className="flex-1 overflow-y-auto pb-20">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/parcours" element={<Units />} />
+          <Route path="/parcours/:unitId" element={<UnitDetail />} />
           <Route path="/grammaire" element={<Grammar />} />
           <Route path="/grammaire/:lessonId" element={<GrammarLessonPage />} />
           <Route path="/vocabulaire" element={<Vocabulary />} />
+          <Route path="/pratique" element={<Practice />} />
           <Route path="/lecture" element={<Reading />} />
           <Route path="/lecture/:textId" element={<ReadingTextPage />} />
           <Route path="/ecoute" element={<Listening />} />
           <Route path="/oral" element={<Speaking />} />
+          <Route path="/ecrit" element={<Writing />} />
         </Routes>
       </main>
       <NavBar />

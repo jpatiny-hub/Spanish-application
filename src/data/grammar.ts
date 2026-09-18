@@ -134,4 +134,51 @@ export const grammarLessons: GrammarLesson[] = [
       },
     ],
   },
+  {
+    id: 'g7-futuro-proximo',
+    order: 7,
+    title: 'Le futur proche : "ir a" + infinitif',
+    summary: 'Pour parler de ce qui va se passer bientôt, comme "aller + infinitif" en français.',
+    points: [
+      {
+        title: 'Construction',
+        explanation: 'Verbe "ir" conjugué (voy, vas, va, vamos, vais, van) + "a" + infinitif du verbe.',
+        examples: [
+          { es: 'Voy a viajar a España.', fr: 'Je vais voyager en Espagne.' },
+          { es: 'Mañana va a llover.', fr: 'Demain il va pleuvoir.' },
+        ],
+      },
+      {
+        title: 'Usage avec la météo',
+        explanation: 'Très utilisé pour les prévisions météo, au présent avec "va" (forme impersonnelle il/elle).',
+        examples: [
+          { es: 'Va a hacer sol el fin de semana.', fr: 'Il va faire soleil le week-end.' },
+          { es: 'Va a nevar en la montaña.', fr: 'Il va neiger en montagne.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'g8-preterito',
+    order: 8,
+    title: 'Le prétérit (passé simple) des verbes réguliers',
+    summary: "Pour raconter une action terminée dans le passé, ex : un voyage ou un événement précis.",
+    points: [
+      {
+        title: 'Verbes en -AR (ex : viajar, voyager)',
+        explanation: 'viajé, viajaste, viajó, viajamos, viajasteis, viajaron.',
+        examples: [{ es: 'La semana pasada viajé a Barcelona.', fr: 'La semaine dernière, j\'ai voyagé à Barcelone.' }],
+      },
+      {
+        title: 'Verbes en -ER/-IR (ex : perder, perdre)',
+        explanation: 'perdí, perdiste, perdió, perdimos, perdisteis, perdieron.',
+        examples: [{ es: 'Perdí mi maleta en el aeropuerto.', fr: "J'ai perdu ma valise à l'aéroport." }],
+      },
+      {
+        title: 'Quand l\'utiliser',
+        explanation: 'Pour une action ponctuelle et terminée, souvent avec un repère temporel précis ("ayer", "la semana pasada").',
+        examples: [{ es: 'Ayer comí paella con mis amigos.', fr: 'Hier, j\'ai mangé de la paella avec mes amis.' }],
+      },
+    ],
+  },
 ]

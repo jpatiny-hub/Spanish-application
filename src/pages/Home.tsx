@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom'
 import { vocabulary } from '../data/vocabulary'
 import { grammarLessons } from '../data/grammar'
 import { readingTexts } from '../data/reading'
+import { units } from '../data/units'
 import { useLocalStorage } from '../lib/storage'
 import { dueCount, type SrsData } from '../lib/srs'
 
 const sections = [
+  { to: '/parcours', label: 'Parcours', icon: '🎯', desc: 'Paquets découverte par thème' },
   { to: '/grammaire', label: 'Grammaire', icon: '📖', desc: 'Rappels théoriques' },
   { to: '/vocabulaire', label: 'Vocabulaire', icon: '🗂️', desc: 'Flashcards à réviser' },
-  { to: '/lecture', label: 'Lecture', icon: '📰', desc: 'Textes progressifs' },
-  { to: '/ecoute', label: 'Écoute', icon: '🎧', desc: 'Compréhension orale' },
-  { to: '/oral', label: 'Oral', icon: '🎤', desc: 'Prononciation' },
+  { to: '/pratique', label: 'Pratique', icon: '🎓', desc: 'Lecture, écoute, oral, écrit' },
 ]
 
 export function Home() {
@@ -51,6 +51,7 @@ export function Home() {
       <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-4 text-sm dark:border-gray-800 dark:bg-gray-900">
         <p className="font-semibold">Contenu disponible</p>
         <ul className="mt-2 space-y-1 text-gray-600 dark:text-gray-400">
+          <li>{units.length} parcours découverte</li>
           <li>{grammarLessons.length} fiches de grammaire</li>
           <li>{vocabulary.length} mots de vocabulaire</li>
           <li>{readingTexts.length} textes de lecture</li>

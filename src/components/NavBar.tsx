@@ -2,17 +2,16 @@ import { NavLink } from 'react-router-dom'
 
 const items = [
   { to: '/', label: 'Accueil', icon: '🏠', end: true },
+  { to: '/parcours', label: 'Parcours', icon: '🎯' },
   { to: '/grammaire', label: 'Grammaire', icon: '📖' },
   { to: '/vocabulaire', label: 'Vocab', icon: '🗂️' },
-  { to: '/lecture', label: 'Lecture', icon: '📰' },
-  { to: '/ecoute', label: 'Écoute', icon: '🎧' },
-  { to: '/oral', label: 'Oral', icon: '🎤' },
+  { to: '/pratique', label: 'Pratique', icon: '🎓' },
 ]
 
 export function NavBar() {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-20 border-t border-gray-200 bg-white/95 backdrop-blur dark:border-gray-800 dark:bg-gray-950/95 pb-[env(safe-area-inset-bottom)]">
-      <ul className="grid grid-cols-6">
+      <ul className="grid grid-cols-5">
         {items.map((item) => (
           <li key={item.to}>
             <NavLink

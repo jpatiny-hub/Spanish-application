@@ -68,6 +68,37 @@ export const vocabulary: VocabItem[] = [
   { id: 'v52', es: 'hoy', fr: "aujourd'hui", category: 'Au quotidien' },
   { id: 'v53', es: 'mañana', fr: 'demain / matin', category: 'Au quotidien' },
   { id: 'v54', es: 'ahora', fr: 'maintenant', category: 'Au quotidien' },
+
+  // Météo
+  { id: 'v55', es: 'el sol', fr: 'le soleil', category: 'Météo', example: { es: 'Hace sol hoy.', fr: "Il y a du soleil aujourd'hui." } },
+  { id: 'v56', es: 'la lluvia', fr: 'la pluie', category: 'Météo' },
+  { id: 'v57', es: 'el viento', fr: 'le vent', category: 'Météo' },
+  { id: 'v58', es: 'la nube', fr: 'le nuage', category: 'Météo' },
+  { id: 'v59', es: 'la nieve', fr: 'la neige', category: 'Météo' },
+  { id: 'v60', es: 'hace calor', fr: 'il fait chaud', category: 'Météo' },
+  { id: 'v61', es: 'hace frío', fr: 'il fait froid', category: 'Météo' },
+  { id: 'v62', es: 'está nublado', fr: 'c\'est nuageux', category: 'Météo' },
+
+  // Voyage
+  { id: 'v63', es: 'el aeropuerto', fr: "l'aéroport", category: 'Voyage' },
+  { id: 'v64', es: 'el billete', fr: 'le billet', category: 'Voyage' },
+  { id: 'v65', es: 'la maleta', fr: 'la valise', category: 'Voyage' },
+  { id: 'v66', es: 'el hotel', fr: "l'hôtel", category: 'Voyage' },
+  { id: 'v67', es: 'la estación', fr: 'la gare', category: 'Voyage' },
+  { id: 'v68', es: 'el mapa', fr: 'la carte (plan)', category: 'Voyage' },
+  { id: 'v69', es: 'reservar', fr: 'réserver', category: 'Voyage' },
+
+  // Au travail (biologiste en industrie pharmaceutique)
+  { id: 'v70', es: 'el laboratorio', fr: 'le laboratoire', category: 'Au travail', example: { es: 'Trabajo en un laboratorio.', fr: 'Je travaille dans un laboratoire.' } },
+  { id: 'v71', es: 'la muestra', fr: "l'échantillon", category: 'Au travail' },
+  { id: 'v72', es: 'la investigación', fr: 'la recherche', category: 'Au travail' },
+  { id: 'v73', es: 'el medicamento', fr: 'le médicament', category: 'Au travail' },
+  { id: 'v74', es: 'el ensayo clínico', fr: "l'essai clinique", category: 'Au travail' },
+  { id: 'v75', es: 'el resultado', fr: 'le résultat', category: 'Au travail' },
+  { id: 'v76', es: 'el colega', fr: 'le/la collègue', category: 'Au travail' },
+  { id: 'v77', es: 'la reunión', fr: 'la réunion', category: 'Au travail' },
+  { id: 'v78', es: 'el informe', fr: 'le rapport', category: 'Au travail' },
+  { id: 'v79', es: 'el microscopio', fr: 'le microscope', category: 'Au travail' },
 ]
 
 export const vocabCategories = Array.from(new Set(vocabulary.map((v) => v.category)))

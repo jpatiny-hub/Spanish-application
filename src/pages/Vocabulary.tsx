@@ -1,10 +1,12 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { vocabCategories, vocabulary } from '../data/vocabulary'
 import { useLocalStorage } from '../lib/storage'
 import { isDue, reviewCard, type SrsData } from '../lib/srs'
 import { Flashcard } from '../components/Flashcard'
 
 export function Vocabulary() {
+  const [searchParams] = useSearchParams()
   const [srsData, setSrsData] = useLocalStorage<SrsData>('srs-vocab', {})
   const [session, setSession] = useState<string[] | null>(null)
   const [index, setIndex] = useState(0)
@@ -33,6 +35,14 @@ export function Vocabulary() {
       setSession(null)
     }
   }
+
+  useEffect(() => {
+    const cat = searchParams.get('cat')
+    if (cat && (vocabCategories as string[]).includes(cat)) {
+      startReview(cat)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (session) {
     const item = vocabulary.find((v) => v.id === session[index])!

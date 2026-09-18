@@ -1,20 +1,36 @@
 import { useMemo, useState } from 'react'
-import { vocabulary } from '../data/vocabulary'
-import { canListen, canSpeak, listenOnce, normalizeForComparison, speak } from '../lib/speech'
+import { useSearchParams } from 'react-router-dom'
+import { speakingCategories, speakingItems } from '../data/speaking'
+import { canListen, canSpeak, listenOnce, speak } from '../lib/speech'
+import { scoreSpokenMatch, type MatchLevel } from '../lib/text'
+import type { SpeakingCategory } from '../types'
 
-const phrases = vocabulary.filter((v) => v.es.split(' ').length <= 3)
+const levelLabel = { mot: 'Mot', fragment: 'Expression', phrase: 'Phrase' } as const
 
 export function Speaking() {
+  const [searchParams] = useSearchParams()
+  const presetCategory = searchParams.get('cat') as SpeakingCategory | null
+
+  const [category, setCategory] = useState<SpeakingCategory | null>(
+    presetCategory && speakingCategories.includes(presetCategory) ? presetCategory : null,
+  )
   const [index, setIndex] = useState(0)
   const [listening, setListening] = useState(false)
-  const [result, setResult] = useState<'correct' | 'wrong' | 'error' | null>(null)
+  const [result, setResult] = useState<MatchLevel | 'error' | null>(null)
   const [heard, setHeard] = useState('')
 
-  const item = phrases[index]
+  const items = useMemo(
+    () => (category ? speakingItems.filter((s) => s.category === category) : []),
+    [category],
+  )
+  const item = items[index]
   const supported = useMemo(() => canListen(), [])
 
-  function playTarget() {
-    speak(item.es)
+  function chooseCategory(cat: SpeakingCategory) {
+    setCategory(cat)
+    setIndex(0)
+    setResult(null)
+    setHeard('')
   }
 
   function tryListen() {
@@ -26,8 +42,7 @@ export function Speaking() {
       (transcript) => {
         setListening(false)
         setHeard(transcript)
-        const ok = normalizeForComparison(transcript) === normalizeForComparison(item.es)
-        setResult(ok ? 'correct' : 'wrong')
+        setResult(scoreSpokenMatch(transcript, item.es))
       },
       () => {
         setListening(false)
@@ -37,25 +52,56 @@ export function Speaking() {
   }
 
   function next() {
-    setIndex((i) => (i + 1) % phrases.length)
+    setIndex((i) => (i + 1) % items.length)
     setResult(null)
     setHeard('')
   }
 
+  if (!category) {
+    return (
+      <div className="px-4 pt-6">
+        <h1 className="text-xl font-bold">Oral</h1>
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          Choisis un thème : mots, expressions et phrases complètes à répéter.
+        </p>
+        <div className="mt-4 space-y-2">
+          {speakingCategories.map((cat) => {
+            const count = speakingItems.filter((s) => s.category === cat).length
+            return (
+              <button
+                key={cat}
+                onClick={() => chooseCategory(cat)}
+                className="flex w-full items-center justify-between rounded-2xl border border-gray-200 bg-white p-4 text-left shadow-sm dark:border-gray-800 dark:bg-gray-900"
+              >
+                <p className="font-semibold">{cat}</p>
+                <span className="text-xs text-gray-500 dark:text-gray-400">{count} exercices</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="px-4 pt-6">
-      <h1 className="text-xl font-bold">Oral</h1>
-      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-        Écoute, répète, et vérifie ta prononciation.
-      </p>
+      <div className="mb-4 flex items-center justify-between">
+        <button onClick={() => setCategory(null)} className="text-sm text-red-600 dark:text-red-400">
+          ← Thèmes
+        </button>
+        <span className="text-sm text-gray-500 dark:text-gray-400">{index + 1} / {items.length}</span>
+      </div>
 
-      <div className="mt-5 flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm dark:border-gray-800 dark:bg-gray-900">
-        <p className="text-3xl font-bold">{item.es}</p>
+      <div className="flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+          {levelLabel[item.level]}
+        </span>
+        <p className="mt-3 text-2xl font-bold">{item.es}</p>
         <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{item.fr}</p>
 
         {canSpeak() && (
           <button
-            onClick={playTarget}
+            onClick={() => speak(item.es)}
             className="mt-4 rounded-full bg-gray-100 px-4 py-2 text-sm dark:bg-gray-800"
           >
             🔊 Écouter le modèle
@@ -82,6 +128,12 @@ export function Speaking() {
 
         {result === 'correct' && (
           <p className="mt-3 font-semibold text-green-600">✓ Très bien !</p>
+        )}
+        {result === 'close' && (
+          <div className="mt-3 text-sm">
+            <p className="font-semibold text-amber-600">🟡 Presque !</p>
+            <p className="text-gray-500 dark:text-gray-400">J'ai entendu : « {heard || '...'} »</p>
+          </div>
         )}
         {result === 'wrong' && (
           <div className="mt-3 text-sm">
