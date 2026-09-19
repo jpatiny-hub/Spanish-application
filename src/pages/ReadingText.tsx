@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { readingTexts } from '../data/reading'
 import { speak, canSpeak } from '../lib/speech'
+import { markUnitStepDone } from '../lib/progress'
 
 export function ReadingTextPage() {
   const { textId } = useParams()
+  const [searchParams] = useSearchParams()
+  const unitId = searchParams.get('unit')
   const text = readingTexts.find((t) => t.id === textId)
   const [shown, setShown] = useState<Set<number>>(new Set())
   const [answers, setAnswers] = useState<Record<number, number>>({})
@@ -102,7 +105,10 @@ export function ReadingTextPage() {
 
       {!checked ? (
         <button
-          onClick={() => setChecked(true)}
+          onClick={() => {
+            setChecked(true)
+            markUnitStepDone(unitId, 'lecture')
+          }}
           disabled={Object.keys(answers).length < text.questions.length}
           className="mt-4 w-full rounded-2xl bg-red-600 py-3 font-semibold text-white disabled:opacity-40"
         >

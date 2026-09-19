@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { vocabulary } from '../data/vocabulary'
 import { canSpeak, speak } from '../lib/speech'
+import { markUnitStepDone } from '../lib/progress'
 import type { VocabItem } from '../types'
 
 interface Question {
@@ -28,6 +29,7 @@ function buildQuiz(category?: string | null): Question[] {
 
 export function Listening() {
   const [searchParams] = useSearchParams()
+  const unitId = searchParams.get('unit')
   const [quiz, setQuiz] = useState<Question[] | null>(null)
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
@@ -64,6 +66,7 @@ export function Listening() {
       setSelected(null)
     } else {
       setQuiz(null)
+      markUnitStepDone(unitId, 'ecoute')
     }
   }
 

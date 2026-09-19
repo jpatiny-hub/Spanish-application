@@ -2,10 +2,12 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { writingCategories, writingExercises } from '../data/writing'
 import { isWrittenAnswerCorrect } from '../lib/text'
+import { markUnitStepDone } from '../lib/progress'
 import type { WritingCategory } from '../types'
 
 export function Writing() {
   const [searchParams] = useSearchParams()
+  const unitId = searchParams.get('unit')
   const presetCategory = searchParams.get('cat') as WritingCategory | null
 
   const [category, setCategory] = useState<WritingCategory | null>(
@@ -51,6 +53,7 @@ export function Writing() {
       setSelfCorrect(false)
     } else {
       setCategory(null)
+      markUnitStepDone(unitId, 'ecrit')
     }
   }
 

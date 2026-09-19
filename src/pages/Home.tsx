@@ -4,18 +4,22 @@ import { grammarLessons } from '../data/grammar'
 import { readingTexts } from '../data/reading'
 import { units } from '../data/units'
 import { useLocalStorage } from '../lib/storage'
-import { dueCount, type SrsData } from '../lib/srs'
+import { dueCount, isDue, type SrsData } from '../lib/srs'
 
 const sections = [
   { to: '/parcours', label: 'Parcours', icon: '🎯', desc: 'Paquets découverte par thème' },
+  { to: '/revision', label: 'Révision', icon: '🔁', desc: 'Mémorisation à long terme' },
   { to: '/grammaire', label: 'Grammaire', icon: '📖', desc: 'Rappels théoriques' },
   { to: '/vocabulaire', label: 'Vocabulaire', icon: '🗂️', desc: 'Flashcards à réviser' },
   { to: '/pratique', label: 'Pratique', icon: '🎓', desc: 'Lecture, écoute, oral, écrit' },
 ]
 
 export function Home() {
-  const [srsData] = useLocalStorage<SrsData>('srs-vocab', {})
-  const due = dueCount(srsData, vocabulary.map((v) => v.id))
+  const [srsVocab] = useLocalStorage<SrsData>('srs-vocab', {})
+  const [srsGrammar] = useLocalStorage<SrsData>('srs-grammar', {})
+  const dueVocab = dueCount(srsVocab, vocabulary.map((v) => v.id))
+  const dueGrammar = grammarLessons.filter((l) => isDue(srsGrammar[l.id])).length
+  const totalDue = dueVocab + dueGrammar
 
   return (
     <div className="px-4 pt-8">
@@ -24,13 +28,17 @@ export function Home() {
         Ton appli personnelle pour apprendre l'espagnol depuis les bases.
       </p>
 
-      {due > 0 && (
+      {totalDue > 0 && (
         <Link
-          to="/vocabulaire"
+          to="/revision"
           className="mt-5 block rounded-2xl bg-red-600 p-4 text-white shadow-sm active:scale-[0.98] transition-transform"
         >
           <p className="text-sm opacity-90">À réviser aujourd'hui</p>
-          <p className="text-xl font-bold">{due} carte{due > 1 ? 's' : ''} de vocabulaire</p>
+          <p className="text-xl font-bold">
+            {dueVocab > 0 && `${dueVocab} carte${dueVocab > 1 ? 's' : ''}`}
+            {dueVocab > 0 && dueGrammar > 0 && ' · '}
+            {dueGrammar > 0 && `${dueGrammar} point${dueGrammar > 1 ? 's' : ''} de grammaire`}
+          </p>
         </Link>
       )}
 

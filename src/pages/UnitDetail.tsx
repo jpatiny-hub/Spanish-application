@@ -72,19 +72,20 @@ export function UnitDetail() {
 
   function stepLink(step: UnitStep): string {
     if (!unit) return '/'
+    const u = `unit=${encodeURIComponent(unit.id)}`
     switch (step) {
       case 'grammaire':
-        return `/grammaire/${unit.grammarLessonId}`
+        return `/grammaire/${unit.grammarLessonId}?${u}`
       case 'vocabulaire':
-        return `/vocabulaire?cat=${encodeURIComponent(unit.vocabCategory)}`
+        return `/vocabulaire?cat=${encodeURIComponent(unit.vocabCategory)}&${u}`
       case 'lecture':
-        return `/lecture/${unit.readingTextId}`
+        return `/lecture/${unit.readingTextId}?${u}`
       case 'ecoute':
-        return `/ecoute?cat=${encodeURIComponent(unit.vocabCategory)}`
+        return `/ecoute?cat=${encodeURIComponent(unit.vocabCategory)}&${u}`
       case 'oral':
-        return `/oral?cat=${encodeURIComponent(unit.speakingCategory)}`
+        return `/oral?cat=${encodeURIComponent(unit.speakingCategory)}&${u}`
       case 'ecrit':
-        return `/ecrit?cat=${encodeURIComponent(unit.writingCategory)}`
+        return `/ecrit?cat=${encodeURIComponent(unit.writingCategory)}&${u}`
     }
   }
 
@@ -137,7 +138,7 @@ export function UnitDetail() {
       </div>
 
       <p className="mt-4 text-center text-xs text-gray-400">
-        Coche chaque étape une fois terminée. Tu pourras revenir réviser ces thèmes plus tard.
+        Les étapes se cochent automatiquement une fois l'exercice terminé. Tu peux aussi les cocher toi-même.
       </p>
     </div>
   )

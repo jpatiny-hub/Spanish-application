@@ -3,10 +3,12 @@ import { useSearchParams } from 'react-router-dom'
 import { vocabCategories, vocabulary } from '../data/vocabulary'
 import { useLocalStorage } from '../lib/storage'
 import { isDue, reviewCard, type SrsData } from '../lib/srs'
+import { markUnitStepDone } from '../lib/progress'
 import { Flashcard } from '../components/Flashcard'
 
 export function Vocabulary() {
   const [searchParams] = useSearchParams()
+  const unitId = searchParams.get('unit')
   const [srsData, setSrsData] = useLocalStorage<SrsData>('srs-vocab', {})
   const [session, setSession] = useState<string[] | null>(null)
   const [index, setIndex] = useState(0)
@@ -33,6 +35,7 @@ export function Vocabulary() {
       setIndex(index + 1)
     } else {
       setSession(null)
+      markUnitStepDone(unitId, 'vocabulaire')
     }
   }
 

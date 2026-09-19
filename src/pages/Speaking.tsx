@@ -3,12 +3,14 @@ import { useSearchParams } from 'react-router-dom'
 import { speakingCategories, speakingItems } from '../data/speaking'
 import { canListen, canSpeak, listenOnce, speak } from '../lib/speech'
 import { scoreSpokenMatch, type MatchLevel } from '../lib/text'
+import { markUnitStepDone } from '../lib/progress'
 import type { SpeakingCategory } from '../types'
 
 const levelLabel = { mot: 'Mot', fragment: 'Expression', phrase: 'Phrase' } as const
 
 export function Speaking() {
   const [searchParams] = useSearchParams()
+  const unitId = searchParams.get('unit')
   const presetCategory = searchParams.get('cat') as SpeakingCategory | null
 
   const [category, setCategory] = useState<SpeakingCategory | null>(
@@ -52,6 +54,9 @@ export function Speaking() {
   }
 
   function next() {
+    if (index + 1 >= items.length) {
+      markUnitStepDone(unitId, 'oral')
+    }
     setIndex((i) => (i + 1) % items.length)
     setResult(null)
     setHeard('')

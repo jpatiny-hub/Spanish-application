@@ -28,6 +28,28 @@ export const grammarLessons: GrammarLesson[] = [
         examples: [{ es: 'llamar', fr: 'appeler' }, { es: 'yo', fr: 'je' }],
       },
     ],
+    exercises: [
+      {
+        question: 'Comment se prononce le "ñ" dans "año" ?',
+        options: ['Comme le "gn" français de montagne', 'Comme un "n" simple', 'Comme "ni" en anglais', 'Il est muet'],
+        answerIndex: 0,
+      },
+      {
+        question: 'Le "h" espagnol se prononce...',
+        options: ['Comme un souffle léger', 'Il est toujours muet', 'Comme un "j"', 'Comme un "ch"'],
+        answerIndex: 1,
+      },
+      {
+        question: '"jamón" se prononce avec un son proche de...',
+        options: ['Le "j" français', 'Un "r" raclé, proche du "h" aspiré anglais', 'Le "y" de yaourt', 'Un "g" dur'],
+        answerIndex: 1,
+      },
+      {
+        question: '"llamar" et "yo" ont en commun le son...',
+        options: ['Le "y" de yaourt', 'Le "l" simple', 'Le "w" anglais', 'Le "ll" français'],
+        answerIndex: 0,
+      },
+    ],
   },
   {
     id: 'g2-genre',
@@ -51,6 +73,38 @@ export const grammarLessons: GrammarLesson[] = [
         examples: [{ es: 'un perro', fr: 'un chien' }, { es: 'una flor', fr: 'une fleur' }],
       },
     ],
+    exercises: [
+      {
+        question: 'Quel est l\'article correct pour "libro" (livre) ?',
+        options: ['el', 'la', 'los', 'las'],
+        answerIndex: 0,
+      },
+      {
+        question: 'Quel est l\'article correct pour "mesa" (table) ?',
+        options: ['el', 'la', 'los', 'las'],
+        answerIndex: 1,
+      },
+      {
+        question: "Comment dit-on \"une fleur\" ?",
+        options: ['un flor', 'una flor', 'el flor', 'unos flor'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Quel est le pluriel correct de "la casa" ?',
+        options: ['el casas', 'la casas', 'las casas', 'los casas'],
+        answerIndex: 2,
+      },
+      {
+        question: '"amigo" devient "amiga" au féminin. Quelle règle générale ça illustre ?',
+        options: [
+          'Les mots en "-o" sont souvent masculins, ceux en "-a" souvent féminins',
+          'Tous les mots sont neutres en espagnol',
+          'Le genre dépend de la couleur du mot',
+          'Il n\'existe aucune règle',
+        ],
+        answerIndex: 0,
+      },
+    ],
   },
   {
     id: 'g3-pronombres',
@@ -67,6 +121,38 @@ export const grammarLessons: GrammarLesson[] = [
         title: 'Le sujet est souvent omis',
         explanation: "Comme la terminaison du verbe indique déjà la personne, on n'utilise le pronom que pour insister ou éviter une ambiguïté.",
         examples: [{ es: 'Hablo español.', fr: 'Je parle espagnol. (sujet sous-entendu)' }],
+      },
+    ],
+    exercises: [
+      {
+        question: 'Quel pronom correspond à "nous" ?',
+        options: ['yo', 'tú', 'nosotros', 'ellos'],
+        answerIndex: 2,
+      },
+      {
+        question: '"Ella" signifie...',
+        options: ['il', 'elle', 'nous', 'vous'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Pourquoi peut-on dire juste "Hablo español" sans "yo" ?',
+        options: [
+          'Parce que "yo" n\'existe pas en espagnol',
+          'Parce que la terminaison du verbe indique déjà qui parle',
+          'Parce que c\'est incorrect autrement',
+          'Parce qu\'on ne conjugue jamais les verbes',
+        ],
+        answerIndex: 1,
+      },
+      {
+        question: '"Vosotros" est utilisé principalement...',
+        options: [
+          'En Amérique latine pour dire "nous"',
+          'En Espagne, pour "vous" au pluriel informel',
+          'Pour dire "il"',
+          'Pour vouvoyer une seule personne',
+        ],
+        answerIndex: 1,
       },
     ],
   },
@@ -92,6 +178,33 @@ export const grammarLessons: GrammarLesson[] = [
         examples: [{ es: 'Tú eres alto y estás contento.', fr: 'Tu es grand et tu es content.' }],
       },
     ],
+    exercises: [
+      {
+        question: '"Soy profesor." Pourquoi utilise-t-on "ser" ici ?',
+        options: ['État temporaire', 'Métier / identité', 'Lieu', 'Humeur du moment'],
+        answerIndex: 1,
+      },
+      {
+        question: '"Estoy cansado." Pourquoi utilise-t-on "estar" ici ?',
+        options: ['Nationalité', 'Métier', 'État temporaire', 'Heure'],
+        answerIndex: 2,
+      },
+      {
+        question: 'Complète : "Madrid ___ en España."',
+        options: ['es', 'está', 'soy', 'eres'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Complète : "Ella ___ médica."',
+        options: ['está', 'es', 'estás', 'soy'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Quelle forme de "estar" correspond à "tú" ?',
+        options: ['estoy', 'estás', 'está', 'estamos'],
+        answerIndex: 1,
+      },
+    ],
   },
   {
     id: 'g5-presente',
@@ -115,6 +228,33 @@ export const grammarLessons: GrammarLesson[] = [
         examples: [{ es: 'Vivo en Francia.', fr: 'Je vis en France.' }],
       },
     ],
+    exercises: [
+      {
+        question: 'Conjugue "hablar" à la 1ère personne du singulier.',
+        options: ['hablo', 'hablas', 'habla', 'hablamos'],
+        answerIndex: 0,
+      },
+      {
+        question: 'Conjugue "comer" à la 3ème personne du singulier.',
+        options: ['como', 'comes', 'come', 'comen'],
+        answerIndex: 2,
+      },
+      {
+        question: 'Conjugue "vivir" avec "nosotros".',
+        options: ['vivo', 'vivimos', 'vivís', 'viven'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Quelle terminaison prend "hablar" avec "vosotros" ?',
+        options: ['-áis', '-amos', '-an', '-as'],
+        answerIndex: 0,
+      },
+      {
+        question: 'Complète : "Ellos ___ (comer) mucho."',
+        options: ['come', 'comes', 'comen', 'comemos'],
+        answerIndex: 2,
+      },
+    ],
   },
   {
     id: 'g6-negation',
@@ -131,6 +271,28 @@ export const grammarLessons: GrammarLesson[] = [
         title: 'Les questions',
         explanation: 'On encadre la phrase de "¿ ?" à l\'écrit ; l\'intonation monte à l\'oral. Pas besoin d\'inversion comme en français.',
         examples: [{ es: '¿Hablas español?', fr: 'Tu parles espagnol ?' }, { es: '¿Cómo te llamas?', fr: 'Comment tu t\'appelles ?' }],
+      },
+    ],
+    exercises: [
+      {
+        question: 'Comment dit-on "Je ne parle pas anglais" ?',
+        options: ['No hablo inglés', 'Hablo no inglés', 'No inglés hablo', 'Inglés no hablo'],
+        answerIndex: 0,
+      },
+      {
+        question: 'Où se place "no" par rapport au verbe ?',
+        options: ['Après le verbe', 'Juste avant le verbe', 'Au milieu du verbe', 'À la fin de la phrase'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Comment transformer "Hablas español." en question ?',
+        options: ['¡Hablas español!', '¿Hablas español?', 'Hablas, ¿español?', 'No hablas español'],
+        answerIndex: 1,
+      },
+      {
+        question: '"¿Cómo te llamas?" veut dire...',
+        options: ['Où habites-tu ?', 'Comment tu t\'appelles ?', 'Quel âge as-tu ?', 'D\'où viens-tu ?'],
+        answerIndex: 1,
       },
     ],
   },
@@ -157,6 +319,38 @@ export const grammarLessons: GrammarLesson[] = [
         ],
       },
     ],
+    exercises: [
+      {
+        question: 'Comment forme-t-on le futur proche en espagnol ?',
+        options: [
+          '"ir" + infinitif directement',
+          '"ir" conjugué + "a" + infinitif',
+          '"estar" + gérondif',
+          'Verbe conjugué au présent uniquement',
+        ],
+        answerIndex: 1,
+      },
+      {
+        question: '"Voy a viajar a España." veut dire...',
+        options: [
+          'J\'ai voyagé en Espagne',
+          'Je vais voyager en Espagne',
+          'Je voyage en Espagne',
+          'Je voyagerais en Espagne',
+        ],
+        answerIndex: 1,
+      },
+      {
+        question: 'Complète : "Mañana ___ a llover."',
+        options: ['voy', 'va', 'van', 'vamos'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Conjugue "ir" pour "nosotros".',
+        options: ['voy', 'va', 'vamos', 'van'],
+        answerIndex: 2,
+      },
+    ],
   },
   {
     id: 'g8-preterito',
@@ -178,6 +372,33 @@ export const grammarLessons: GrammarLesson[] = [
         title: 'Quand l\'utiliser',
         explanation: 'Pour une action ponctuelle et terminée, souvent avec un repère temporel précis ("ayer", "la semana pasada").',
         examples: [{ es: 'Ayer comí paella con mis amigos.', fr: 'Hier, j\'ai mangé de la paella avec mes amis.' }],
+      },
+    ],
+    exercises: [
+      {
+        question: 'Conjugue "viajar" à la 1ère personne du singulier au prétérit.',
+        options: ['viajo', 'viajé', 'viajaba', 'viajaré'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Conjugue "perder" à la 3ème personne du singulier au prétérit.',
+        options: ['pierde', 'perdió', 'perdía', 'perderá'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Quand utilise-t-on le prétérit ?',
+        options: [
+          'Pour une habitude répétée',
+          'Pour une action ponctuelle terminée dans le passé',
+          'Pour parler du futur',
+          'Pour un état permanent',
+        ],
+        answerIndex: 1,
+      },
+      {
+        question: '"Ayer comí paella." veut dire...',
+        options: ['Je mange de la paella', 'Je mangerai de la paella', 'Hier j\'ai mangé de la paella', 'Je mangeais de la paella'],
+        answerIndex: 2,
       },
     ],
   },
@@ -210,6 +431,33 @@ export const grammarLessons: GrammarLesson[] = [
           { es: 'A mi hermano le gusta nadar.', fr: 'Mon frère aime nager.' },
           { es: 'A mí no me gusta el cine, pero a ti sí.', fr: "Moi je n'aime pas le cinéma, mais toi oui." },
         ],
+      },
+    ],
+    exercises: [
+      {
+        question: 'Comment dit-on "J\'aime la musique" ?',
+        options: ['Yo gusto la música', 'Me gusta la música', 'Me gustas la música', 'Gusto música'],
+        answerIndex: 1,
+      },
+      {
+        question: 'Pourquoi "gusta" (et pas "gustan") dans "Me gusta el fútbol" ?',
+        options: [
+          'Parce que "fútbol" est au singulier',
+          'Parce que c\'est un verbe irrégulier sans règle',
+          'Parce que c\'est une erreur fréquente',
+          'Parce que "me" l\'impose toujours',
+        ],
+        answerIndex: 0,
+      },
+      {
+        question: 'Complète : "Me ___ los deportes." (au pluriel)',
+        options: ['gusta', 'gustan', 'gusto', 'gustas'],
+        answerIndex: 1,
+      },
+      {
+        question: '"A mi hermano le gusta nadar." veut dire...',
+        options: ['J\'aime nager', 'Mon frère aime nager', 'Mon frère nage', 'Nous aimons nager'],
+        answerIndex: 1,
       },
     ],
   },

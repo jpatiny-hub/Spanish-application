@@ -27,12 +27,19 @@ export interface GrammarPoint {
   examples: { es: string; fr: string }[]
 }
 
+export interface GrammarExercise {
+  question: string
+  options: string[]
+  answerIndex: number
+}
+
 export interface GrammarLesson {
   id: string
   title: string
   order: number
   summary: string
   points: GrammarPoint[]
+  exercises: GrammarExercise[]
 }
 
 export interface ReadingQuestion {

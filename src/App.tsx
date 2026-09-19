@@ -12,6 +12,7 @@ import { Writing } from './pages/Writing'
 import { Practice } from './pages/Practice'
 import { Units } from './pages/Units'
 import { UnitDetail } from './pages/UnitDetail'
+import { Revision } from './pages/Revision'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/parcours" element={<Units />} />
           <Route path="/parcours/:unitId" element={<UnitDetail />} />
+          <Route path="/revision" element={<Revision />} />
           <Route path="/grammaire" element={<Grammar />} />
           <Route path="/grammaire/:lessonId" element={<GrammarLessonPage />} />
           <Route path="/vocabulaire" element={<Vocabulary />} />
